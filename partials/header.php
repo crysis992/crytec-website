@@ -1,5 +1,15 @@
+<?php
+
+include "config/database.php";
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 
 <head>
     <meta charset="UTF-8">
@@ -40,12 +50,25 @@
             <!-- Nav Links -->
             <ul id="primary-navigation" data-visible="false" class="primary-navigation flex md:items-center gap-4">
 
-                <li class="active"><a href="index.html"><span aria-hidden="true">01</span>Home</a></li>
-                <li> <a href="#blog"><span aria-hidden="true">02</span> News</a></li>
-                <li><a href="#projects"><span aria-hidden="true">03</span>My Projects</a></li>
-                <li><a href="#contact"><span aria-hidden="true">04</span>Kontakt</a></li>
-                <li><a href="/portfolio"><span aria-hidden="true">05</span>Portfolio</a></li>
-                <li><a href="login.php"><span aria-hidden="true">06</span>Login</a></li>
+                <li class="active"><a href="<?= ROOT_URL ?>index.php"><span aria-hidden="true">01</span>Home</a></li>
+                <li> <a href="<?= ROOT_URL ?>about.php"><span aria-hidden="true">02</span> About</a></li>
+                <li><a href="<?= ROOT_URL ?>projects.php"><span aria-hidden="true">03</span>My Projects</a></li>
+                <li><a href="<?= ROOT_URL ?>contact.php"><span aria-hidden="true">04</span>Kontakt</a></li>
+
+
+                <li class="nav__profile relative cursor-pointer debug-g avatarDropMenu">
+                    <div class="nav_avatar rounded-full overflow-hidden">
+                        <img src="./img/logo.png"">
+                    </div>
+
+
+                    <ul class=" bg-primary-blue px-5 py-4 dropdown" data-visible="false">
+                <li><a href=" dashboard.html">Dashboard</a>
+                </li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+            </li>
+
 
             </ul>
         </nav>

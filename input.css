@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --transition: all 300ms ease;
+}
+
 body {
     background: url("../img/background.jpg") no-repeat center center fixed;
     background-size: cover;
@@ -27,12 +31,36 @@ body {
     display: none;
 }
 
+.nav_avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0.3rem solid;
+}
+
+.nav__profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.nav__profile ul {
+    position: absolute;
+    top: 115%;
+    right: 0;
+    display: block;
+}
+
+
+
+.nav__profile ul[data-visible="false"] {
+    display: none;
+}
+
 .primary-navigation {
     padding: 0;
     margin: 0;
     margin-top: 0.45rem;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5rem);
+    background: hsl(0 0% 100% / .1);
+    backdrop-filter: blur(1rem);
 }
 
 .primary-navigation a>[aria-hidden="true"] {
@@ -42,6 +70,15 @@ body {
 }
 
 @media (max-width: 35em) {
+
+    .nav__profile ul {
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1rem 0 1rem 0;
+    }
+
 
     .primary-navigation[data-visible="true"] {
         transform: translateX(0%);

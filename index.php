@@ -1,5 +1,5 @@
 <?php
-include_once "header.php";
+include_once "partials/header.php";
 ?>
 
 <div class="container mx-auto mt-36 flex flex-col justify-between">
@@ -14,10 +14,10 @@ include_once "header.php";
                 <div class="m-2 rounded-full">
                     <object data="img/avatar.svg" width="85" height="85"> </object>
                 </div>
-                <p class="ml-1">by crysis992</p>
+                <p class="ml-1">by crysis992 </p>
             </div>
             <div class="w-10/12 mx-1 md:mx-4 text-center  md:mt-12">
-                <h3 class="font-bold text-3xl">Test</h3>
+                <h3 class="font-bold text-3xl">Test12</h3>
             </div>
 
 
@@ -182,5 +182,5 @@ include_once "header.php";
 
 
 <?php
-include_once "footer.php";
+include_once "partials/footer.php";
 ?>

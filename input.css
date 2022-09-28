@@ -22,6 +22,74 @@
 body {
     background: url("../img/background.jpg") no-repeat center center fixed;
     background-size: cover;
+
+    font-family: Bellefair, sans-serif;
+    color: azure;
+
+    min-height: 100vh;
+    position: relative;
+
+
+    outline: rgb(226, 5, 182) solid 5px
+}
+
+footer {
+    background-color: var(--primary-blue);
+    padding: 5rem 0 0;
+    box-shadow: inset 0 1.5rem 1.5rem rgba(0, 0, 0, 0.2);
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+form input {
+    background-color: var(--secondary-blue);
+    border: 2px solid var(--primary-blue);
+    border-radius: 1rem;
+    padding-left: 0.55rem;
+}
+
+input:focus {
+    /* Use outline 0 instead of none for accessibility. Screenreaders will ignore it if set to none  */
+    outline: 0;
+}
+
+.alert-message {
+    padding: 0.8rem 1.4rem;
+    margin-bottom: 1rem;
+    border-radius: var(--radius-2);
+}
+
+.alert-message.error {
+    background-color: rgba(116, 8, 8, 0.4);
+    color: red;
+}
+
+.alert-message.success {
+    background-color: rgba(0, 128, 0, 0.4);
+    color: greenyellow;
+}
+
+.btn {
+    background: var(--secondary-blue);
+    display: inline-block;
+    width: fit-content;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+}
+
+.btn:hover {
+    background: var(--light);
+}
+
+input[type="file"] {
+    display: none;
 }
 
 .avatar {
@@ -286,6 +354,31 @@ Category Button
     margin-top: 1rem;
     line-height: 1.7rem;
 }
+
+
+
+/* Empty Page */
+
+.empty-page {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    width: 95%;
+    height: 80vh;
+    background: var(--primary-blue);
+}
+
+.empty-page h1 {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 800;
+    display: grid;
+    place-content: center;
+}
+
+
+
+
 
 
 

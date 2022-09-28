@@ -16,7 +16,7 @@ error_reporting(E_ALL);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>CryTec.net</title>
+    <title>CryTec Blog</title>
     <link rel="icon" type="image/png" href="favicon.png">
 
     <!-- Google fonts -->
@@ -30,12 +30,9 @@ error_reporting(E_ALL);
 
 </head>
 
-<body class="bg-body-bg text-white m-0 p-0 font-bellefair">
+<body>
 
     <header class="flex justify-between items-center font-barlow">
-
-
-
         <!-- Logo -->
         <div class="logo flex items-center">
             <img class="m-2" src="img/logo.png" alt="Website logo" width="50px" height="50px">
@@ -51,7 +48,7 @@ error_reporting(E_ALL);
             <ul id="primary-navigation" data-visible="false" class="primary-navigation flex md:items-center gap-4">
 
                 <li class="active"><a href="<?= ROOT_URL ?>index.php"><span aria-hidden="true">01</span>Home</a></li>
-                <li> <a href="<?= ROOT_URL ?>about.php"><span aria-hidden="true">02</span> About</a></li>
+                <li> <a href="<?= ROOT_URL ?>blog.php"><span aria-hidden="true">02</span> Blog</a></li>
                 <li><a href="<?= ROOT_URL ?>projects.php"><span aria-hidden="true">03</span>My Projects</a></li>
                 <li><a href="<?= ROOT_URL ?>contact.php"><span aria-hidden="true">04</span>Kontakt</a></li>
 

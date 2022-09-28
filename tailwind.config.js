@@ -3,6 +3,8 @@ module.exports = {
     "./index.php",
     "./blog.php",
     "./post.php",
+    "./signup.php",
+    "./category-posts.php",
     "./**/*.{html, php}",
     "./partials/**/*.{html,php}",
     "./admin/**/*.{html,php}",

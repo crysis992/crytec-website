@@ -2,6 +2,8 @@ module.exports = {
   content: [
     "./index.php",
     "./blog.php",
+    "./post.php",
+    "./**/*.{html, php}",
     "./partials/**/*.{html,php}",
     "./admin/**/*.{html,php}",
   ],

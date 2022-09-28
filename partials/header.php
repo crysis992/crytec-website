@@ -30,7 +30,7 @@ error_reporting(E_ALL);
 
 </head>
 
-<body class="bg-body-bg text-white w-full m-0 p-0 font-bellefair">
+<body class="bg-body-bg text-white m-0 p-0 font-bellefair">
 
     <header class="flex justify-between items-center font-barlow">
 

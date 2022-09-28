@@ -163,17 +163,17 @@ body {
         background-image: url("../img/icon-close.svg");
     }
 
-}
 
-
-@media(min-width: 35em) and (max-width: 64em) {
-
-    body {
-        background: red;
+    .singlepost {
+        width: 95%;
     }
 
+    .singlepost-container {
+        width: 100%;
+    }
 
 }
+
 
 
 /* Between 560px and  880*/
@@ -280,6 +280,12 @@ Category Button
 }
 
 
+/* Singlepost */
+
+.singlepost p {
+    margin-top: 1rem;
+    line-height: 1.7rem;
+}
 
 
 

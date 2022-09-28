@@ -613,6 +613,10 @@ video {
   left: 0px;
 }
 
+.top-0 {
+  top: 0px;
+}
+
 .m-2 {
   margin: 0.5rem;
 }
@@ -640,6 +644,11 @@ video {
 .my-10 {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .mt-32 {
@@ -716,6 +725,12 @@ video {
 
 .h-6 {
   height: 1.5rem;
+}
+
+.h-fit {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .w-fit {
@@ -828,6 +843,10 @@ video {
 
 .rounded-lg {
   border-radius: 0.5rem;
+}
+
+.rounded-sm {
+  border-radius: 0.125rem;
 }
 
 .border {
@@ -1046,7 +1065,6 @@ body {
   color: azure;
   min-height: 100vh;
   position: relative;
-  outline: rgb(226, 5, 182) solid 5px
 }
 
 footer {

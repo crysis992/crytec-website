@@ -1,9 +1,10 @@
 module.exports = {
   content: [
-  "./index.php",
-  "./partials/**/*.{html,php}",
-  "./admin/**/*.{html,php}",
-],
+    "./index.php",
+    "./blog.php",
+    "./partials/**/*.{html,php}",
+    "./admin/**/*.{html,php}",
+  ],
   theme: {
     extend: {
       colors: {
@@ -16,10 +17,10 @@ module.exports = {
       },
       fontFamily: {
         'barlow': ['Barlow Condensed', 'sans-serif'],
-        'bellefair': ['Bellefair', 'sans-serif'] 
-    }
+        'bellefair': ['Bellefair', 'sans-serif']
+      }
     },
 
   },
-  plugins: [], 
+  plugins: [],
 }

@@ -7,7 +7,7 @@ include_once "partials/header.php";
 <!-- START Featured Post -->
 <section class="container featured mt-32 mx-auto">
 
-    <div class="container featured-container bg-primary-blue mb-20">
+    <div class="container featured-container bg-primary-blue mb-20 pt-3 px-2">
 
         <div class="post-thumbnail">
             <img src="./img/woman-laptop.jpg">
@@ -18,6 +18,9 @@ include_once "partials/header.php";
             <p class="post-body">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Ea debitis eius eos ipsam dolores labore, mollitia rem doloremque minus ducimus quas veritatis vero sapiente eum accusantium tenetur possimus!
                 Illum, similique.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam assumenda obcaecati velit quas optio iste nihil eius facilis.
+                Explicabo, doloribus odio? Accusantium veritatis iusto ipsum harum consequuntur quos nemo dolore nostrum eaque aliquid! Sit in, quam repellat minus,
+                veritatis ducimus obcaecati, magnam eveniet rem itaque voluptatibus vero praesentium consequatur! Provident.
             </p>
 
             <div class="post-author">
@@ -63,7 +66,7 @@ include_once "partials/header.php";
                         <img src="./img/avatar1.png"">
                 </div>
                 <div class=" post-author-info">
-                        <h5>By: Bunny Foerby</h5>
+                        <h5>By: Rabbit Foerby</h5>
                         <small>Sep 28 2022 - 06:23</small>
                     </div>
                 </div>
@@ -91,7 +94,7 @@ include_once "partials/header.php";
                         <img src="./img/avatar2.png"">
                 </div>
                 <div class=" post-author-info">
-                        <h5>By: Bunny Foerby</h5>
+                        <h5>By: Rabbit Foerby</h5>
                         <small>Sep 28 2022 - 06:23</small>
                     </div>
                 </div>
@@ -115,7 +118,7 @@ include_once "partials/header.php";
                         <img src="./img/avatar1.png"">
                 </div>
                 <div class=" post-author-info">
-                        <h5>By: Bunny Foerby</h5>
+                        <h5>By: Lea Cats</h5>
                         <small>Sep 28 2022 - 06:23</small>
                     </div>
                 </div>
@@ -165,7 +168,7 @@ include_once "partials/header.php";
                         <img src="./img/avatar1.png"">
                 </div>
                 <div class=" post-author-info">
-                        <h5>By: Bunny Foerby</h5>
+                        <h5>By: Rabbit Foerby</h5>
                         <small>Sep 28 2022 - 06:23</small>
                     </div>
                 </div>
@@ -190,7 +193,7 @@ include_once "partials/header.php";
                         <img src="./img/avatar1.png"">
                 </div>
                 <div class=" post-author-info">
-                        <h5>By: Bunny Foerby</h5>
+                        <h5>By: crysis992</h5>
                         <small>Sep 28 2022 - 06:23</small>
                     </div>
                 </div>
@@ -215,7 +218,7 @@ include_once "partials/header.php";
                         <img src="./img/avatar1.png"">
                 </div>
                 <div class=" post-author-info">
-                        <h5>By: Bunny Foerby</h5>
+                        <h5>By: cAmpa</h5>
                         <small>Sep 28 2022 - 06:23</small>
                     </div>
                 </div>

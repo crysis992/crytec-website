@@ -10,7 +10,7 @@ let counter;
 dropdown.addEventListener('mouseleave', (event) => {
     counter = setTimeout(() => {
         hideDropDown();
-    }, 5500);
+    }, 850);
 
     console.log("Counter = " + counter)
 })

@@ -56,7 +56,7 @@ error_reporting(E_ALL);
                 <li><a href="<?= ROOT_URL ?>contact.php"><span aria-hidden="true">04</span>Kontakt</a></li>
 
 
-                <li class="nav__profile relative cursor-pointer debug-g avatarDropMenu">
+                <li class="nav__profile relative cursor-pointer avatarDropMenu">
                     <div class="nav_avatar rounded-full overflow-hidden">
                         <img src="./img/logo.png"">
                     </div>

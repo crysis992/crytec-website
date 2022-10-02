@@ -1,7 +1,6 @@
 <?php
-session_start();
 require($_SERVER['DOCUMENT_ROOT'] . '/crytec/config/database.php');
-
+session_start();
 
 
 if (isset($_POST['submit'])) {
@@ -24,11 +23,11 @@ if (isset($_POST['submit'])) {
     } else if (!$lastname) {
         $_SESSION['signup'] = "Please enter your last name.";
     } else if (!$username) {
-        $_SESSION['signup'] = "Please enter your last name.";
+        $_SESSION['signup'] = "Please enter a username.";
     } else if (!$email) {
         $_SESSION['signup'] = "Please enter a valid email.";
-    } else if (strlen($createpassword) < 2 || strlen($confirmpassword) < 2) {
-        $_SESSION['signup'] = "Password must at least contain 8 characters.";
+    } else if (strlen($createpassword) < 6 || strlen($confirmpassword) < 6) {
+        $_SESSION['signup'] = "Password must at least contain 6 characters.";
     } else if (!$avatar['name']) {
         $_SESSION['signup'] = "Please select an avatar";
     } else {
@@ -69,7 +68,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['signup'] = "File size to big. Should be less than 1mb";
         }
     } else {
-        $_SESSION['signup'] = "File should be png, jpg or jpeg. ext: $extention Name: $avatar_name  ";
+        $_SESSION['signup'] = "File should be png, jpg or jpeg!";
     }
 
 

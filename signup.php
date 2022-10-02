@@ -12,19 +12,7 @@ $email = $_SESSION['signup-data']['email'] ?? null;
 $createpassword = $_SESSION['signup-data']['createpassword'] ?? null;
 $confirmpassword = $_SESSION['signup-data']['confirmpassword'] ?? null;
 // delete session
-var_dump($_SESSION);
 unset($_SESSION['signup-data']);
-
-
-$avatar_destination = dirname(__DIR__, 1);
-$test = 'static/images/';
-echo "</br>";
-echo "</br>";
-echo "Path:" . $avatar_destination;
-echo "</br>";
-
-echo "Realpath: " . realpath($test);
-
 ?>
 
 

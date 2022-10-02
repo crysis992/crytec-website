@@ -89,6 +89,11 @@ select {
     transition-duration: 250ms;
 }
 
+.btn.green {
+    background: green;
+    color: whitesmoke;
+}
+
 .btn:hover {
     background: var(--col-secondary)
 }

@@ -64,3 +64,13 @@ navToggle.addEventListener("click", () => {
         navToggle.setAttribute('aria-expanded', "false");
     }
 });
+
+
+
+var p = $('#post p');
+var ks = $('#post').height();
+while ($(p).outerHeight() > ks) {
+    $(p).text(function (index, text) {
+        return text.replace(/\W*\s(\S)*$/, '...');
+    });
+}

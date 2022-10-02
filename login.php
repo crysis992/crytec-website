@@ -5,9 +5,9 @@ include_once "partials/header.php";
 
 
 
-<div class="container mx-auto my-5 debug-r">
+<div class="container mx-auto my-5">
 
-    <div class="debug-y signup bg-primary-blue 
+    <div class="signup bg-primary-blue 
     flex justify-center flex-col items-center 
     w-2/5 mx-auto py-8">
         <h2 class="font-extrabold text-5xl mb-4">Sign Up</h2>

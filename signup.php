@@ -12,23 +12,23 @@ include_once "partials/header.php";
         <div class="alert-message success">
             <p>This is a error message</p>
         </div>
-        <form action="" class="flex flex-col justify-center w-fit gap-5">
+        <form action="<?= ROOT_URL ?>inc/signup.inc.php" enctype="multipart/form-data" method="post" class="flex flex-col justify-center w-fit gap-5">
 
-            <input type="text" placeholder="First Name">
-            <input type="text" placeholder="Last Name">
-            <input type="text" placeholder="Username">
-            <input type="email" placeholder="E-Mail">
-            <input type="password" placeholder="Create Password">
-            <input type="password" placeholder="Confirm Password">
+            <input type="text" name="firstname" placeholder="First Name">
+            <input type="text" name="lastname" placeholder="Last Name">
+            <input type="text" name="username" placeholder="Username">
+            <input type="email" name="email" placeholder="E-Mail">
+            <input type="password" name="createpassword" placeholder="Create Password">
+            <input type="password" name="confirmpassword" placeholder="Confirm Password">
 
 
 
             <div class="form-control">
-                <label for="avatar" class="btn">Browse</label>
-                <input type="file" id="avatar">
+                <label for="avatar" name="avatar" class="btn">Browse</label>
+                <input type="file" id="avatar" name="avatar">
                 <span>Upload Avatar</span>
             </div>
-            <button class="btn" type="submit">Sign Up</button>
+            <button class="btn" name="submit" type="submit">Sign Up</button>
             <small>Already have an account? <a href="login.php" class="hover:text-light underline">Log in</a></small>
 
 

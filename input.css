@@ -43,15 +43,10 @@ body {
     background-color: var(--col-primary);
     /* padding: 5rem 0 0; */
     /* box-shadow: inset 0 1.5rem 1.5rem rgba(0, 0, 0, 0.2); */
-
-    position: relative;
-    right: 0;
-    bottom: 0;
-    left: 0;
 }
 
 form input {
-    background-color: var(--col-secondary);
+    background-color: var(--col-highlight);
     border: 2px solid var(--col-highlight);
     border-radius: 1rem;
     padding-left: 0.55rem;
@@ -254,6 +249,20 @@ input[type="file"] {
 
 .featured .post-thumbnail {
     height: fit-content;
+}
+
+
+/* Loginform */
+
+.loginform {
+    background: var(--col-primary);
+    width: 320px;
+
+    padding: 2rem 2rem 2rem 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
 }
 
 

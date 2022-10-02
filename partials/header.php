@@ -36,7 +36,7 @@ error_reporting(E_ALL);
 
 </head>
 
-<body>
+<body class="flex min-h-screen flex-col">
 
     <header class="flex justify-between items-center font-barlow">
         <!-- Logo -->

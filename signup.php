@@ -1,25 +1,69 @@
 <?php
+session_start();
 include_once "partials/header.php";
+
+
+// Get form data if there was an registration error
+
+$firstname = $_SESSION['signup-data']['firstname'] ?? null;
+$lastname = $_SESSION['signup-data']['lastname'] ?? null;
+$username = $_SESSION['signup-data']['username'] ?? null;
+$email = $_SESSION['signup-data']['email'] ?? null;
+$createpassword = $_SESSION['signup-data']['createpassword'] ?? null;
+$confirmpassword = $_SESSION['signup-data']['confirmpassword'] ?? null;
+// delete session
+var_dump($_SESSION);
+unset($_SESSION['signup-data']);
+
+
+$avatar_destination = dirname(__DIR__, 1);
+$test = 'static/images/';
+echo "</br>";
+echo "</br>";
+echo "Path:" . $avatar_destination;
+echo "</br>";
+
+echo "Realpath: " . realpath($test);
+
 ?>
 
 
 
 
-<div class="container mx-auto my-5">
+<div class="loginform">
 
-    <div class="signup bg-primary-blue flex justify-center flex-col items-center w-2/5 mx-auto py-8">
+    <div class="signup flex justify-center flex-col items-center gap-4">
         <h2>Sign Up</h2>
-        <div class="alert-message success">
-            <p>This is a error message</p>
-        </div>
-        <form action="<?= ROOT_URL ?>inc/signup.inc.php" enctype="multipart/form-data" method="post" class="flex flex-col justify-center w-fit gap-5">
 
-            <input type="text" name="firstname" placeholder="First Name">
-            <input type="text" name="lastname" placeholder="Last Name">
-            <input type="text" name="username" placeholder="Username">
-            <input type="email" name="email" placeholder="E-Mail">
-            <input type="password" name="createpassword" placeholder="Create Password">
-            <input type="password" name="confirmpassword" placeholder="Confirm Password">
+        <?php if (isset($_SESSION['signup'])) : ?>
+
+
+        <div class="alert-message error">
+            <p>
+                <?= $_SESSION['signup'];
+                    unset($_SESSION['signup']);
+                    ?>
+            </p>
+
+        </div>
+
+        <?php endif ?>
+
+
+
+
+
+
+        <form action="<?= ROOT_URL ?>inc/signup.inc.php" enctype="multipart/form-data" method="post"
+            class="flex flex-col justify-center w-fit gap-5">
+
+            <input type="text" name="firstname" value="<?= $firstname ?>" placeholder="First Name">
+            <input type="text" name="lastname" value="<?= $lastname ?>" placeholder="Last Name">
+            <input type="text" name="username" value="<?= $username ?>" placeholder="Username">
+            <input type="email" name="email" value="<?= $email ?>" placeholder="E-Mail">
+            <input type="password" name="createpassword" value="<?= $createpassword ?>" placeholder="Create Password">
+            <input type="password" name="confirmpassword" value="<?= $confirmpassword ?>"
+                placeholder="Confirm Password">
 
 
 

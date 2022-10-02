@@ -1,3 +1,4 @@
+<div class="flex flex-grow"></div>
 <div class="footer p-4 md:flex md:items-center md:justify-between md:p-6 z-0">
     <div>
         <ul class="flex justify-center items-center gap-2 text-2xl">

@@ -1,13 +1,12 @@
 <?php
-
-// require("./config/database.php");
-// require(__DIR__ . '/../../config/database.php');
-
+session_start();
 require($_SERVER['DOCUMENT_ROOT'] . '/crytec/config/database.php');
 
 
 
 if (isset($_POST['submit'])) {
+
+    unset($_SERVER['signup-data']);
 
     $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $lastname = filter_var($_POST['lastname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -22,79 +21,103 @@ if (isset($_POST['submit'])) {
 
     if (!$firstname) {
         $_SESSION['signup'] = "Please enter your first name.";
-        echo "FN";
     } else if (!$lastname) {
         $_SESSION['signup'] = "Please enter your last name.";
-        echo "LN";
     } else if (!$username) {
         $_SESSION['signup'] = "Please enter your last name.";
-        echo "U";
     } else if (!$email) {
         $_SESSION['signup'] = "Please enter a valid email.";
-        echo "EM";
     } else if (strlen($createpassword) < 2 || strlen($confirmpassword) < 2) {
-        $_SESSION['signup'] = "Password must be at least contain 8 characters.";
-        echo "PWL";
+        $_SESSION['signup'] = "Password must at least contain 8 characters.";
     } else if (!$avatar['name']) {
         $_SESSION['signup'] = "Please select an avatar";
-        echo "AV";
     } else {
-        // Check if passwords match
         if ($createpassword !== $confirmpassword) {
-            $_SESSION['signup'] == "Passwords do not match";
-            echo "No match";
-        } else {
-            // Hash Password
-            $hashed_pwd = password_hash($createpassword, PASSWORD_DEFAULT);
-
-            var_dump($connection);
-
-            if (canRegister($connection, $username, $email)) {
-
-                //Rename Image
-                $time = time();
-                $avatar_name = $time . $avatar['name'];
-                $avatar_tmp_name = $avatar['tmp_name'];
-                $avatar_destination = './static/avatars/' . $avatar_name;
-
-                //Allowed extensions
-                $allowed_files = ['png', 'jpg', 'jpeg'];
-                $extension = explode('.', $avatar_name);
-                $extention = end($extension);
-
-
-                if (in_array($extension, $allowed_files)) {
-                    //Check file size
-
-                    if ($avatar['size'] < 1000000) {
-                        //Upload Avatar
-                        move_uploaded_file($avatar_tmp_name, $avatar_destination);
-                    } else {
-                        //Filesize too big
-                        $_SESSION['signup'] = "File size to big. Should be less than 1mb";
-                    }
-                } else {
-                    $_SESSION['signup'] = "File should be png, jpg or jpeg.";
-                }
-            } else {
-                $_SESSION['signup'] == "Username or Email already taken.";
-            }
+            $_SESSION['signup'] = "Passwords do not match";
+            redirectBack();
+            die();
         }
+    }
+
+    $hashed_pwd = password_hash($createpassword, PASSWORD_DEFAULT);
+
+    if (!canRegister($connection, $username, $email)) {
+        $_SESSION['signup'] = "Username or Email already taken.";
+        redirectBack();
+    }
+
+    $time = time();
+    $avatar_name = $time . $avatar['name'];
+    $avatar_tmp_name = $avatar['tmp_name'];
+    //$avatar_destination = 'static/images/' . $avatar_name;
+    $avatar_destination = dirname(__DIR__) . "/static/images/" . $avatar_name;
+
+    //Allowed extensions
+    $allowed_files = ['png', 'jpg', 'jpeg'];
+    $extention = explode('.', $avatar_name);
+    $extention = end($extention);
+
+
+    if (in_array($extention, $allowed_files)) {
+        //Check file size
+
+        if ($avatar['size'] < 1000000) {
+            //Upload Avatar
+            move_uploaded_file($avatar_tmp_name, $avatar_destination);
+        } else {
+            //Filesize too big
+            $_SESSION['signup'] = "File size to big. Should be less than 1mb";
+        }
+    } else {
+        $_SESSION['signup'] = "File should be png, jpg or jpeg. ext: $extention Name: $avatar_name  ";
     }
 
 
     // Redirect user to registration if any errors occures
-    if (isset($_SESSION)) {
+    if (isset($_SESSION['signup'])) {
         // pass form data back to signup page.
+        $_SESSION['signup-data'] = $_POST;
         header('location:' . ROOT_URL . 'signup.php');
+        die();
     } else {
         //insert new user into database
-        echo 'Successfully registered!';
+        $insert_user_query = "INSERT INTO users(firstname, lastname, username, email, password, avatar, is_admin) 
+        VALUES('$firstname', '$lastname', '$username', '$email', '$hashed_pwd', '$avatar_name', 0)";
+
+        $insert_user_result = mysqli_query($connection, $insert_user_query);
+        echo $insert_user_result;
+
+        if (mysqli_errno($connection) == 0) {
+            //Redirect to Login page
+            $_SESSION['signup-success'] = "Registration successful. Please log in!";
+            header('location:' . ROOT_URL . 'login.php');
+            die();
+        } else {
+            $_SESSION['signup'] = "Failed to create account - please contact support </br> Error number: " . mysqli_errno($connection);
+            header('location:' . ROOT_URL . 'signup.php');
+            die();
+        }
     }
 } else {
     echo "Fatal Error!";
-    // header('location: ' . ROOT_URL . 'signup.php');
-    // die();
+    header('location: ' . ROOT_URL . 'error.php');
+    die();
+}
+
+
+
+
+
+
+
+function redirectBack()
+{
+
+    if (isset($_SESSION['signup'])) {
+        $_SESSION['signup-data'] = $_POST;
+    }
+
+    header('location:' . ROOT_URL . 'signup.php');
 }
 
 

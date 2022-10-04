@@ -1,5 +1,5 @@
 <?php
-include $_SERVER["DOCUMENT_ROOT"] . "/crytec/config/constants.php";
+include __DIR__ . '/../config/constants.php';
 
 
 

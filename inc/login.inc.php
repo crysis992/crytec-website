@@ -1,5 +1,5 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'] . '/crytec/config/database.php');
+require(__DIR__ . '/../config/database.php');
 session_start();
 
 

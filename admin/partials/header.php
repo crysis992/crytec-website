@@ -11,6 +11,14 @@ if (!isset($_SESSION['user-id'])) {
     die();
 }
 
+//fetch current user from database
+if (isset($_SESSION['user-id'])) {
+    $id = filter_var($_SESSION['user-id'], FILTER_SANITIZE_NUMBER_INT);
+    $query = "SELECT avatar FROM users WHERE id=$id";
+    $result = mysqli_query($connection, $query);
+    $avatar = mysqli_fetch_assoc($result);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -62,14 +70,14 @@ if (!isset($_SESSION['user-id'])) {
 
                 <li class="nav__profile relative cursor-pointer avatarDropMenu">
                     <div class="nav_avatar rounded-full overflow-hidden">
-                        <img src="../img/logo.png"">
+                        <img src="<?= ROOT_URL . 'static/images/' . $avatar['avatar'] ?>">
                     </div>
 
 
                     <ul class=" bg-primary-blue px-5 py-4 dropdown" data-visible="false">
-                <li><a href=" dashboard.html">Dashboard</a>
+                        <li><a href="<?= ROOT_URL ?>admin/dashboard.php">Logout</a></li>
                 </li>
-                <li><a href="logout.html">Logout</a></li>
+                <li><a href="<?= ROOT_URL ?>inc/logout.inc.php">Logout</a></li>
             </ul>
             </li>
 

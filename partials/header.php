@@ -1,10 +1,19 @@
 <?php
 
-include __DIR__ . '/../config/constants.php';
+include __DIR__ . '/../config/database.php';
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 session_start();
+
+
+//fetch current user from database
+if (isset($_SESSION['user-id'])) {
+    $id = filter_var($_SESSION['user-id'], FILTER_SANITIZE_NUMBER_INT);
+    $query = "SELECT avatar FROM users WHERE id=$id";
+    $result = mysqli_query($connection, $query);
+    $avatar = mysqli_fetch_assoc($result);
+}
 ?>
 
 
@@ -71,12 +80,12 @@ session_start();
                 <?php if (isset($_SESSION['user-id'])) : ?>
                 <li class="nav__profile relative cursor-pointer avatarDropMenu">
                     <div class="nav_avatar rounded-full overflow-hidden">
-                        <img src="./img/logo.png">
+                        <img src="<?= ROOT_URL . 'static/images/' . $avatar['avatar'] ?>">
                     </div>
 
 
                     <ul class=" bg-highlight px-5 py-4 dropdown" data-visible="false">
-                        <li><a href=" dashboard.html">Dashboard</a>
+                        <li><a href="<?= ROOT_URL ?>admin/dashboard.php">Dashboard</a>
                         </li>
                         <li><a href="<?= ROOT_URL ?>inc/logout.inc.php">Logout</a></li>
                     </ul>

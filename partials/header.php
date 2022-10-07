@@ -7,6 +7,8 @@ error_reporting(E_ALL);
 session_start();
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,12 +61,14 @@ session_start();
                             aria-hidden="true">01</span>Home</a></li>
                 <li> <a href="<?= ROOT_URL ?>blog.php" class="hover:underline hover:text-secondary"><span
                             aria-hidden="true">02</span> Blog</a></li>
-                <li><a href="<?= ROOT_URL ?>login.php" class="hover:underline hover:text-secondary"><span
-                            aria-hidden="true">03</span>Login</a></li>
                 <li><a href="<?= ROOT_URL ?>contact.php" class="hover:underline hover:text-secondary"><span
-                            aria-hidden="true">04</span>Kontakt</a></li>
+                            aria-hidden="true">03</span>Kontakt</a></li>
+                <?php if (!isset($_SESSION['user-id'])) : ?>
+                <li><a href="<?= ROOT_URL ?>login.php" class="hover:underline hover:text-secondary"><span
+                            aria-hidden="true">04</span>Login</a></li>
+                <?php endif ?>
 
-
+                <?php if (isset($_SESSION['user-id'])) : ?>
                 <li class="nav__profile relative cursor-pointer avatarDropMenu">
                     <div class="nav_avatar rounded-full overflow-hidden">
                         <img src="./img/logo.png">
@@ -74,12 +78,22 @@ session_start();
                     <ul class=" bg-highlight px-5 py-4 dropdown" data-visible="false">
                         <li><a href=" dashboard.html">Dashboard</a>
                         </li>
-                        <li><a href="logout.html">Logout</a></li>
+                        <li><a href="<?= ROOT_URL ?>inc/logout.inc.php">Logout</a></li>
                     </ul>
                 </li>
-
+                <?php endif ?>
 
             </ul>
         </nav>
         <script src="js/nav.js"></script>
     </header>
+
+
+    <?php
+
+    echo '<div class="bg-black text-red-700 text-center debug-r mt-1"> ';
+    echo 'Session Debug: </br>';
+    var_dump($_SESSION);
+    echo "</div> ";
+
+    ?>

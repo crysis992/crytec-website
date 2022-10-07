@@ -4,6 +4,7 @@ module.exports = {
     "./blog.php",
     "./post.php",
     "./signup.php",
+    "./error.php",
     "./category-posts.php",
     "./**/*.{html, php}",
     "./partials/**/*.{html,php}",

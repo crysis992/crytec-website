@@ -2,7 +2,10 @@
 include_once "partials/header.php";
 ?>
 
+<?php if (isset($_SESSION['user-id'])) : ?>
+<section class="welcome mx-auto text-5xl text-green-400">You are now logged in!</section>
 
+<?php endif ?>
 
 <!-- START Featured Post -->
 <section class="container featured mt-32 mx-auto">

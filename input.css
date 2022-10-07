@@ -272,7 +272,7 @@ input[type="file"] {
 /* Loginform */
 
 .loginform {
-    background: var(--col-primary);
+    background: rgba(0, 0, 0, .5);
     width: 320px;
 
     padding: 2rem 2rem 2rem 2rem;
@@ -280,6 +280,26 @@ input[type="file"] {
     margin-right: auto;
     margin-bottom: 2rem;
     margin-top: 4rem;
+
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
+
+.user-box {
+    position: relative;
+}
+
+.user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    border-radius: 0;
 }
 
 

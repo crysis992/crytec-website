@@ -1,20 +1,17 @@
 <?php
 include_once "./partials/header.php";
-
-var_dump($_SESSION);
 ?>
-
 
 <div class="dashboard container mx-auto w-full">
 
     <div class="dashboard-container mx-auto w-3/6">
         <aside>
             <ul>
-                <li><a href="#manage">Add Post</a></li>
-                <li><a href="#manage">Manage Posts</a></li>
+                <li><a href="add-post.php">Add Post</a></li>
+                <li><a href="#">Manage Posts</a></li>
                 <?php if (isset($_SESSION['user_is_admin'])) : ?>
-                <li><a href="#manage">Add User</a></li>
-                <li><a href="#manage">Add Category</a></li>
+                <li><a href="add-user.php">Add User</a></li>
+                <li><a href="add-category.php">Add Category</a></li>
                 <li><a href="#manage">Manage Categories</a></li>
                 <?php endif ?>
             </ul>

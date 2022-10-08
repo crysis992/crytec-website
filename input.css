@@ -31,7 +31,10 @@ html {
 }
 
 body {
-    background: url("../img/background.jpg") no-repeat center center fixed;
+    /* background: url("../img/background.jpg") no-repeat center center fixed; */
+
+
+    background: linear-gradient(#141e30, #243b55) no-repeat fixed center;
     background-size: cover;
     color: var(--col-text);
 
@@ -92,6 +95,15 @@ select {
 .btn.green {
     background: green;
     color: whitesmoke;
+}
+
+.btn.red {
+    background: #9f0000;
+    color: black;
+}
+
+.btn.red:hover {
+    background: red;
 }
 
 .btn:hover {

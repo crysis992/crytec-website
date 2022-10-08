@@ -7,13 +7,5 @@ if (!isset($_SESSION['user-id'])) {
     die();
 }
 
-
-if (isset($_SESSION['user-id'])) {
-    unset($_SESSION['user-id']);
-    if (isset($_SESSION['user_is_admin'])) {
-        unset($_SESSION['user_is_admin']);
-        header('location: ' . ROOT_URL);
-    } else {
-        header('location: ' . ROOT_URL);
-    }
-}
+session_destroy();
+header('location: ' . ROOT_URL);

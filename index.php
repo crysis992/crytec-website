@@ -7,6 +7,15 @@ include_once "partials/header.php";
 
 <?php endif ?>
 
+<style>
+body {
+    background: url("img/background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: Bellefair, sans-serif;
+    position: relative;
+}
+</style>
+
 <!-- START Featured Post -->
 <section class="container featured mt-32 mx-auto">
 
@@ -177,18 +186,15 @@ include_once "partials/header.php";
 
 
 <!-- Category Buttons -->
-<section class="relative category-buttons px-14 mx-auto flex justify-center bg-primary py-5 mb-5 md:w-7/12">
-    <section class="bg-primary z-50">
-
-        <div class="container category-button-container font-bold grid grid-cols-3 w-fit gap-3 pb-3">
-            <a href="category" class="btn">Gaming</a>
-            <a href="category" class="btn">Lifestyle</a>
-            <a href="category" class="btn">Science & Technology</a>
-            <a href="category" class="btn">News</a>
-            <a href="category" class="btn">Development</a>
-        </div>
-
-    </section>
+<section class="relative category-buttons px-14 mx-auto flex justify-center py-5 mb-5 md:w-7/12">
+    <div
+        class="container category-button-container font-bold flex flex-wrap flex-grow items-center justify-center gap-2 pb-3">
+        <a href="category" class="btn">Gaming</a>
+        <a href="category" class="btn">Lifestyle</a>
+        <a href="category" class="btn">Science & Technology</a>
+        <a href="category" class="btn">News</a>
+        <a href="category" class="btn">Development</a>
+    </div>
 </section>
 
 

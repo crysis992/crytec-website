@@ -26,9 +26,9 @@ if (isset($_SESSION['user-id'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="<?= ROOT_URL ?>css/style.css">
     <title>CryTec Blog</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="<?= ROOT_URL ?>favicon.png">
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,7 +53,7 @@ if (isset($_SESSION['user-id'])) {
     <header class="flex justify-between items-center font-barlow">
         <!-- Logo -->
         <div class="logo flex items-center">
-            <img class="m-2" src="./img/logo.png" alt="Website logo" width="50" height="50">
+            <img class="m-2" src="<?= ROOT_URL ?>img/logo.png" alt="Website logo" width="50" height="50">
             <h2 class="font-bold text-xl">CryTec</h2>
         </div>
 
@@ -94,15 +94,15 @@ if (isset($_SESSION['user-id'])) {
 
             </ul>
         </nav>
-        <script src="js/nav.js"></script>
+        <script src="<?= ROOT_URL ?>js/nav.js"></script>
     </header>
 
 
     <?php
 
-    echo '<div class="bg-black text-red-700 text-center debug-r mt-1"> ';
-    echo 'Session Debug: </br>';
+    //echo '<div class="bg-black text-red-700 text-center debug-r mt-1"> ';
+    //echo 'Session Debug: </br>';
     var_dump($_SESSION);
-    echo "</div> ";
+    //echo "</div> ";
 
     ?>

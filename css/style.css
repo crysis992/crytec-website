@@ -597,6 +597,10 @@ video {
   border-width: 0;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -607,10 +611,6 @@ video {
 
 .top-0 {
   top: 0px;
-}
-
-.z-50 {
-  z-index: 50;
 }
 
 .z-0 {
@@ -639,6 +639,11 @@ video {
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .mt-32 {
@@ -685,10 +690,6 @@ video {
   margin-right: 1rem;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -701,26 +702,18 @@ video {
   display: table;
 }
 
-.grid {
-  display: grid;
-}
-
 .hidden {
   display: none;
+}
+
+.h-5\/6 {
+  height: 83.333333%;
 }
 
 .h-fit {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-}
-
-.h-full {
-  height: 100%;
-}
-
-.h-5\/6 {
-  height: 83.333333%;
 }
 
 .min-h-screen {
@@ -735,18 +728,18 @@ video {
   width: 8rem;
 }
 
-.w-fit {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
 .w-2\/6 {
   width: 33.333333%;
 }
 
 .w-11\/12 {
   width: 91.666667%;
+}
+
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .w-2\/5 {
@@ -773,6 +766,10 @@ video {
   width: 50%;
 }
 
+.w-10 {
+  width: 2.5rem;
+}
+
 .flex-grow {
   flex-grow: 1;
 }
@@ -781,8 +778,12 @@ video {
   cursor: pointer;
 }
 
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.cursor-default {
+  cursor: default;
+}
+
+.cursor-none {
+  cursor: none;
 }
 
 .flex-col {
@@ -805,6 +806,10 @@ video {
   justify-content: space-between;
 }
 
+.gap-2 {
+  gap: 0.5rem;
+}
+
 .gap-3 {
   gap: 0.75rem;
 }
@@ -817,8 +822,8 @@ video {
   gap: 1.25rem;
 }
 
-.gap-2 {
-  gap: 0.5rem;
+.gap-1 {
+  gap: 0.25rem;
 }
 
 .overflow-hidden {
@@ -850,6 +855,11 @@ video {
   background-color: transparent;
 }
 
+.bg-slate-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+}
+
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -858,16 +868,6 @@ video {
 .bg-highlight {
   --tw-bg-opacity: 1;
   background-color: rgb(41 41 45 / var(--tw-bg-opacity));
-}
-
-.bg-slate-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
-}
-
-.bg-slate-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-70 {
@@ -948,6 +948,11 @@ video {
   font-family: Barlow Condensed, sans-serif;
 }
 
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -958,24 +963,19 @@ video {
   line-height: 2.25rem;
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
 }
 
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .font-bold {
@@ -986,24 +986,24 @@ video {
   font-weight: 800;
 }
 
-.text-slate-300 {
-  --tw-text-opacity: 1;
-  color: rgb(203 213 225 / var(--tw-text-opacity));
-}
-
-.text-gray-500 {
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
-}
-
 .text-green-400 {
   --tw-text-opacity: 1;
   color: rgb(74 222 128 / var(--tw-text-opacity));
 }
 
+.text-slate-300 {
+  --tw-text-opacity: 1;
+  color: rgb(203 213 225 / var(--tw-text-opacity));
+}
+
 .text-red-700 {
   --tw-text-opacity: 1;
   color: rgb(185 28 28 / var(--tw-text-opacity));
+}
+
+.text-green-200 {
+  --tw-text-opacity: 1;
+  color: rgb(187 247 208 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -1041,7 +1041,8 @@ html {
 }
 
 body {
-  background: url("../img/background.jpg") no-repeat center center fixed;
+  /* background: url("../img/background.jpg") no-repeat center center fixed; */
+  background: linear-gradient(#141e30, #243b55) no-repeat fixed center;
   background-size: cover;
   color: var(--col-text);
   font-family: Bellefair, sans-serif;
@@ -1102,6 +1103,15 @@ select {
 .btn.green {
   background: green;
   color: whitesmoke;
+}
+
+.btn.red {
+  background: #9f0000;
+  color: black;
+}
+
+.btn.red:hover {
+  background: red;
 }
 
 .btn:hover {
@@ -1510,13 +1520,6 @@ input[type="file"] {
 .hover\:underline:hover {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
-}
-
-@media (prefers-color-scheme: dark) {
-  .dark\:text-gray-400 {
-    --tw-text-opacity: 1;
-    color: rgb(156 163 175 / var(--tw-text-opacity));
-  }
 }
 
 @media (min-width: 640px) {

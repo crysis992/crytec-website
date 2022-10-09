@@ -10,9 +10,8 @@ include_once "./partials/header.php";
                 <li><a href="add-post.php">Add Post</a></li>
                 <li><a href="#">Manage Posts</a></li>
                 <?php if (isset($_SESSION['user_is_admin'])) : ?>
-                <li><a href="add-user.php">Add User</a></li>
-                <li><a href="add-category.php">Add Category</a></li>
-                <li><a href="#manage">Manage Categories</a></li>
+                <li><a href="userlist.php">Userlist</a></li>
+                <li><a href="add-category.php">Categories</a></li>
                 <?php endif ?>
             </ul>
         </aside>

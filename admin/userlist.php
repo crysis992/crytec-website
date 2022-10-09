@@ -58,7 +58,7 @@ $users = mysqli_query($connection, $query);
                         <td><?= $user['lastname'] ?></td>
                         <td class="w-10 flex gap-1">
                             <a href="edit-user.php?id=<?= $user['id'] ?>" class="btn green">Edit</a>
-                            <a href="edit" class="btn red">Delete</a>
+                            <a href="../inc/delete-user.inc.php?id=<?= $user['id'] ?>" class="btn red">Delete</a>
                         </td>
                     </tr>
 

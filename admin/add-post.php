@@ -42,7 +42,7 @@ unset($_SESSION['add-post-data']);
             <textarea name="body" class="resize-none" rows="10" placeholder="Body" id="editor"></textarea>
             <?php if (isset($_SESSION['user_is_admin'])) : ?>
             <div class="form-control">
-                <input type="checkbox" name="is_featured" value="1" id="is_featured" checked>
+                <input type="checkbox" name="is_featured" value="0" id="is_featured" checked>
                 <label for="is_featured">Featured</label>
             </div>
             <?php endif ?>

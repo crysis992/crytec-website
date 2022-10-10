@@ -10,17 +10,13 @@ $author_id = $_SESSION['user-id'];
 $title = filter_var($_POST['title'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $body = filter_var($_POST['body'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $category_id = filter_var($_POST['category'], FILTER_SANITIZE_NUMBER_INT);
-$is_featured = filter_var($_POST['is_featured'], FILTER_SANITIZE_NUMBER_INT);
+$is_featured = 0;
+if (isset($_POST['is_featured'])) {
+    $is_featured = filter_var($_POST['is_featured'], FILTER_SANITIZE_NUMBER_INT);
+}
+
 $thumbnail = $_FILES['thumbnail'];
 
-
-echo $body;
-echo "</br>";
-echo "</br>";
-echo "</br>";
-echo $_POST['body'];
-
-die();
 // set is_featured to 0 if unchecked
 $is_featured = $is_featured == 1 ?: 0;
 

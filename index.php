@@ -7,19 +7,19 @@ include_once "partials/header.php";
 
 <?php endif ?>
 
-<style>
+<!-- <style>
 body {
     background: url("img/background.jpg") no-repeat center center fixed;
     background-size: cover;
     font-family: Bellefair, sans-serif;
     position: relative;
 }
-</style>
+</style> -->
 
 <!-- START Featured Post -->
 <section class="container featured mt-32 mx-auto">
 
-    <div class="container featured-container bg-primary pt-3 px-2">
+    <div class="featured-container bg-primary pt-3 px-2">
 
         <div class="post-thumbnail">
             <img src="./img/woman-laptop.jpg">

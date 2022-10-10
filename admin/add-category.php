@@ -1,32 +1,38 @@
 <?php
 include_once "./partials/header.php";
+
+$title = $_SESSION['add-category-data']['title'] ?? null;
+$description = $_SESSION['add-category-data']['description'] ?? null;
+// delete session
+unset($_SESSION['add-category-data']);
+
+if (isset($description)) {
+    echo "VALUE HERE!";
+}
+
 ?>
 
 
-
-
-<div class="container mx-auto my-5">
-
-    <div class="signup bg-primary-blue 
-    flex justify-center flex-col items-center 
-    w-2/5 mx-auto py-8">
-        <h2 class="font-extrabold text-5xl mb-4">Add Category</h2>
-        <div class="alert-message error my-2">
-            <p>This is a error message</p>
-        </div>
-        <form action="" enctype="multipart/form-data" class="flex flex-col justify-center w-fit gap-5">
-
-            <input type="text" placeholder="Title">
-            <textarea name="" id="" rows="4" placeholder="Description"></textarea>
-            <button class="btn" type="submit">Add</button>
-        </form>
-
+<div class="form-container">
+    <h2>Add Category</h2>
+    <?php if (isset($_SESSION['add-category'])) : ?>
+    <div class="alert-message error">
+        <p>
+            <?= $_SESSION['add-category'];
+                unset($_SESSION['add-category']);
+                ?>
+        </p>
     </div>
+    <?php endif ?>
+    <form action="<?= ROOT_URL ?>inc/admin-addcategory.php" method="POST">
+
+        <input type="text" name="title" placeholder="Title" value="<?= $title ?>">
+        <textarea name="description" rows=" 4" placeholder="Description"
+            autocomplete="off"><?php if (isset($description)) : ?><?= $description ?><?php endif ?></textarea>
+        <button class="btn green" name="submit" type="submit">Add</button>
+    </form>
+
 </div>
-
-
-
-
 <?php
 include_once "./partials/footer.php";
 ?>

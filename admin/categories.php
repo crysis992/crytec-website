@@ -5,10 +5,13 @@ include_once "./partials/header.php";
 
 $current_admin_id = $_SESSION['user-id'];
 
-$query = "SELECT * FROM users";
+$query = "SELECT * FROM categories ORDER by title";
 $users = mysqli_query($connection, $query);
 
+
+
 ?>
+
 
 <div class="ad-dashboard">
 
@@ -31,17 +34,14 @@ $users = mysqli_query($connection, $query);
 
         <div class="adc-head">
             <h2>Userlist</h2>
-            <button class="btn green"> <a href="add-user.php">Add new User</a></button>
+            <button class="btn green"> <a href="add-category.php">Add Category</a></button>
         </div>
         <div class="admin-container-content">
             <table>
                 <thead>
                     <tr>
-                        <th>Username</th>
-                        <th>Email</th>
-                        <th>Admin</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
+                        <th>Category</th>
+                        <th>Description</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -49,21 +49,13 @@ $users = mysqli_query($connection, $query);
                 <tbody>
                     <?php while ($user = mysqli_fetch_assoc($users)) : ?>
                     <tr>
-                        <td><?= $user['username'] ?></td>
-                        <td><?= $user['email'] ?></td>
-                        <td class="cursor-default"><?= $user['is_admin'] ? 'Yes' : 'No' ?></td>
-                        <td><?= $user['firstname'] ?></td>
-                        <td><?= $user['lastname'] ?></td>
+                        <td><?= $user['title'] ?></td>
+                        <td><?= $user['description'] ?></td>
                         <td class="w-10 flex gap-1">
-                            <?php if ($user['id'] == $current_admin_id) : ?>
-                            <a href="" class="btn disabled">Edit</a>
-                            <a href="" class="btn disabled">Delete</a>
-                            <?php else : ?>
-                            <a href="edit-user.php?id=<?= $user['id'] ?>" class="btn green">Edit</a>
-                            <a href="../inc/delete-user.inc.php?id=<?= $user['id'] ?>" class="btn red">Delete</a>
+                            <a href="edit-category.php?id=<?= $user['id'] ?>" class="btn green">Edit</a>
+                            <a href="../inc/admin-delete-category.inc.php?id=<?= $user['id'] ?>"
+                                class="btn red">Delete</a>
                         </td>
-                        <?php endif ?>
-
                     </tr>
 
                     <?php endwhile ?>

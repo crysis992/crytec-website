@@ -1,0 +1,139 @@
+// Admin Dashboard
+
+$bold: 800;
+
+.form-container {
+    background-color: var(--col-primary);
+    height: fit-content;
+    width: fit-content;
+    padding: 2rem;
+
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 5px 14px 2px rgba(0, 0, 0, 0.37);
+
+    h2 {
+        font-weight: $bold;
+        font-size: 3rem;
+        line-height: 1;
+        padding-bottom: 2.5rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    form {
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        button {
+            align-self: flex-end;
+        }
+
+        select {
+            width: fit-content;
+        }
+
+        textarea {
+            background-color: var(--col-highlight);
+            border: none;
+            outline: none;
+            resize: none;
+            color: azure;
+        }
+    }
+}
+
+.ad-dashboard {
+    display: flex;
+    justify-content: space-between;
+
+    h2 {
+        font-weight: $bold;
+        font-size: 3rem;
+        line-height: 1;
+    }
+}
+
+.admin-container {
+    position: relative;
+    height: 500px;
+    background: var(--col-primary);
+    margin-left: auto;
+    margin-right: auto;
+    flex-grow: 1;
+    overflow: scroll;
+
+    h2 {
+        font-weight: $bold;
+        font-size: 3rem;
+        text-align: center;
+        padding: 0.8rem;
+    }
+
+    .adc-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 3rem;
+        h2 {
+            flex-grow: 1;
+        }
+    }
+}
+
+.admin-container-content {
+    /* margin-left: 20%; */
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    table {
+        width: 100%;
+        text-align: left;
+
+        th {
+            background-color: var(--col-secondary);
+            padding: 0.8rem;
+            color: black;
+        }
+
+        td {
+            width: 100%;
+            padding: 0.8rem;
+            border-bottom: 1px solid var(--col-secondary);
+        }
+    }
+}
+
+.admin-sidebar {
+    //position: absolute;
+    width: 15%;
+    max-width: 200px;
+
+    background: var(--col-primary);
+
+    //top: 25%;
+    //transform: translateY(-30%);
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+
+        li {
+            padding: 1rem 0 1rem 0;
+            width: 100%;
+        }
+
+        li:hover {
+            background-color: var(--col-secondary);
+        }
+    }
+
+    a {
+        margin-left: 1.2rem;
+    }
+}

@@ -49,9 +49,7 @@ if (isset($_SESSION['user-id'])) {
 </head>
 
 <body class="flex min-h-screen flex-col">
-
-    <header class="flex justify-between items-center font-barlow">
-        <!-- Logo -->
+    <header>
         <div class="logo flex items-center">
             <img class="m-2" src="<?= ROOT_URL ?>img/logo.png" alt="Website logo" width="50" height="50">
             <h2 class="font-bold text-xl">CryTec</h2>
@@ -64,17 +62,13 @@ if (isset($_SESSION['user-id'])) {
         <nav>
             <!-- Nav Links -->
             <ul id="primary-navigation" data-visible="false"
-                class="primary-navigation flex md:items-center gap-4 text-slate-300">
+                class="primary-navigation flex md:items-center text-slate-300">
 
-                <li><a href="<?= ROOT_URL ?>index.php" class="hover:underline hover:text-secondary"><span
-                            aria-hidden="true">01</span>Home</a></li>
-                <li> <a href="<?= ROOT_URL ?>blog.php" class="hover:underline hover:text-secondary"><span
-                            aria-hidden="true">02</span> Blog</a></li>
-                <li><a href="<?= ROOT_URL ?>contact.php" class="hover:underline hover:text-secondary"><span
-                            aria-hidden="true">03</span>Kontakt</a></li>
+                <li><a href="<?= ROOT_URL ?>index.php"><span aria-hidden="true">01</span>Home</a></li>
+                <li> <a href="<?= ROOT_URL ?>blog.php"><span aria-hidden="true">02</span> Blog</a></li>
+                <li><a href="<?= ROOT_URL ?>contact.php"><span aria-hidden="true">03</span>Kontakt</a></li>
                 <?php if (!isset($_SESSION['user-id'])) : ?>
-                <li><a href="<?= ROOT_URL ?>login.php" class="hover:underline hover:text-secondary"><span
-                            aria-hidden="true">04</span>Login</a></li>
+                <li><a href="<?= ROOT_URL ?>login.php"><span aria-hidden="true">04</span>Login</a></li>
                 <?php endif ?>
 
                 <?php if (isset($_SESSION['user-id'])) : ?>
@@ -102,7 +96,7 @@ if (isset($_SESSION['user-id'])) {
 
     //echo '<div class="bg-black text-red-700 text-center debug-r mt-1"> ';
     //echo 'Session Debug: </br>';
-    var_dump($_SESSION);
+    //var_dump($_SESSION);
     //echo "</div> ";
 
     ?>

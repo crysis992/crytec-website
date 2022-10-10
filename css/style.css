@@ -1,6 +1,229 @@
-/*
-! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
-*/
+.form-container {
+  background-color: var(--col-primary);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 5px 14px 2px rgba(0, 0, 0, 0.37);
+}
+
+.form-container h2 {
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1;
+  padding-bottom: 2.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.form-container form {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-container form button {
+  align-self: flex-end;
+}
+
+.form-container form select {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.form-container form textarea {
+  background-color: var(--col-highlight);
+  border: none;
+  outline: none;
+  resize: none;
+  color: azure;
+}
+
+.ad-dashboard {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ad-dashboard h2 {
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.admin-container {
+  position: relative;
+  height: 500px;
+  background: var(--col-primary);
+  margin-left: auto;
+  margin-right: auto;
+  flex-grow: 1;
+  overflow: scroll;
+}
+
+.admin-container h2 {
+  font-weight: 800;
+  font-size: 3rem;
+  text-align: center;
+  padding: 0.8rem;
+}
+
+.admin-container .adc-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 3rem;
+}
+
+.admin-container .adc-head h2 {
+  flex-grow: 1;
+}
+
+.admin-container-content {
+  /* margin-left: 20%; */
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.admin-container-content table {
+  width: 100%;
+  text-align: left;
+}
+
+.admin-container-content table th {
+  background-color: var(--col-secondary);
+  padding: 0.8rem;
+  color: black;
+}
+
+.admin-container-content table td {
+  width: 100%;
+  padding: 0.8rem;
+  border-bottom: 1px solid var(--col-secondary);
+}
+
+.admin-sidebar {
+  width: 15%;
+  max-width: 200px;
+  background: var(--col-primary);
+}
+
+.admin-sidebar ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.admin-sidebar ul li {
+  padding: 1rem 0 1rem 0;
+  width: 100%;
+}
+
+.admin-sidebar ul li:hover {
+  background-color: var(--col-secondary);
+}
+
+.admin-sidebar a {
+  margin-left: 1.2rem;
+}
+
+/* Primary Navigation */
+
+header {
+  font-family: Barlow Condensed, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+.nav_avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0.3rem solid;
+}
+
+.nav__profile {
+  position: relative;
+  cursor: pointer;
+}
+
+.nav__profile ul {
+  position: absolute;
+  top: 115%;
+  right: 0;
+  display: block;
+}
+
+.nav__profile ul li {
+  opacity: 0;
+  -webkit-animation: animateDropdown 200ms 0s ease forwards;
+  animation: animateDropdown 200ms 0s ease forwards;
+  transform-origin: top;
+}
+
+.nav__profile ul li:nth-child(2) {
+  -webkit-animation-delay: 400ms;
+  animation-delay: 400ms;
+}
+
+@-webkit-keyframes animateDropdown {
+  0% {
+    transform: rotateX(90deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes animateDropdown {
+  0% {
+    transform: rotateX(90deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.nav__profile ul[data-visible=false] {
+  display: none;
+}
+
+.primary-navigation {
+  padding: 0;
+  margin: 0;
+  background: hsla(0deg, 0%, 100%, 0.1);
+  -webkit-backdrop-filter: blur(1rem);
+  backdrop-filter: blur(1rem);
+  gap: 1rem;
+}
+
+.primary-navigation a:hover {
+  color: var(--col-secondary);
+}
+
+.primary-navigation a > [aria-hidden=true] {
+  font-weight: 700;
+  -webkit-margin-end: 0.35rem;
+  margin-inline-end: 0.35rem;
+}
+
+/* ! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -636,16 +859,6 @@ video {
   margin-bottom: 1.25rem;
 }
 
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.my-3 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-}
-
 .mt-32 {
   margin-top: 8rem;
 }
@@ -742,10 +955,6 @@ video {
   width: fit-content;
 }
 
-.w-2\/5 {
-  width: 40%;
-}
-
 .w-4\/5 {
   width: 80%;
 }
@@ -762,10 +971,6 @@ video {
   width: 10rem;
 }
 
-.w-3\/6 {
-  width: 50%;
-}
-
 .w-10 {
   width: 2.5rem;
 }
@@ -780,6 +985,10 @@ video {
 
 .cursor-default {
   cursor: default;
+}
+
+.resize-none {
+  resize: none;
 }
 
 .flex-col {
@@ -964,14 +1173,19 @@ video {
   line-height: 2rem;
 }
 
-.text-xl {
-  font-size: 1.25rem;
+.text-lg {
+  font-size: 1.125rem;
   line-height: 1.75rem;
 }
 
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .font-bold {
@@ -1101,6 +1315,16 @@ select {
   color: whitesmoke;
 }
 
+.btn.disabled {
+  background: #434343;
+  color: whitesmoke;
+}
+
+.btn.disabled:hover {
+  background: #434343;
+  color: whitesmoke;
+}
+
 .btn.red {
   background: #9f0000;
   color: black;
@@ -1139,83 +1363,6 @@ input[type="file"] {
 
 .text-content {
   box-shadow: 0px 5px 14px 2px rgba(0, 0, 0, 0.37);
-}
-
-/* Primary Navigation */
-
-.mobile-nav-toggle {
-  display: none;
-}
-
-.nav_avatar {
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 0.3rem solid;
-}
-
-.nav__profile {
-  position: relative;
-  cursor: pointer;
-}
-
-.nav__profile ul {
-  position: absolute;
-  top: 115%;
-  right: 0;
-  display: block;
-}
-
-.nav__profile ul li {
-  opacity: 0;
-  -webkit-animation: animateDropdown 800ms 0s ease forwards;
-          animation: animateDropdown 800ms 0s ease forwards;
-  transform-origin: top;
-}
-
-.nav__profile ul li:nth-child(2) {
-  -webkit-animation-delay: 500ms;
-          animation-delay: 500ms;
-}
-
-@-webkit-keyframes animateDropdown {
-  0% {
-    transform: rotateX(90deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-    opacity: 1;
-  }
-}
-
-@keyframes animateDropdown {
-  0% {
-    transform: rotateX(90deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-    opacity: 1;
-  }
-}
-
-.nav__profile ul[data-visible="false"] {
-  display: none;
-}
-
-.primary-navigation {
-  padding: 0;
-  margin: 0;
-  margin-top: 0.45rem;
-  background: hsl(0 0% 100% / .1);
-  -webkit-backdrop-filter: blur(1rem);
-          backdrop-filter: blur(1rem);
-}
-
-.primary-navigation a>[aria-hidden="true"] {
-  font-weight: 700;
-  -webkit-margin-end: .35rem;
-          margin-inline-end: .35rem;
 }
 
 /* 
@@ -1334,12 +1481,10 @@ input[type="file"] {
 /* Empty Page */
 
 .empty-page {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5rem;
-  width: 95%;
-  height: 80vh;
-  background: var(--col-secondary);
+  margin: 3rem auto 2rem;
+  width: 65%;
+  min-height: 650px;
+  background: var(--col-primary);
 }
 
 .empty-page h1 {
@@ -1348,66 +1493,6 @@ input[type="file"] {
   font-weight: 800;
   display: grid;
   place-content: center;
-}
-
-/* Admin Dashboard */
-
-.dashboard {
-  margin-top: 6rem;
-}
-
-.dashboard main {
-  margin-left: 1.5rem;
-}
-
-.dashboard main h2 {
-  margin: 0 0 2rem 0;
-  line-height: 1;
-}
-
-.dashboard main table {
-  width: 100%;
-  text-align: left;
-}
-
-.dashboard main table th {
-  background-color: var(--col-secondary);
-  padding: 0.8rem;
-  color: black;
-}
-
-.dashboard main table td {
-  padding: 0.8rem;
-  border-bottom: 1px solid var(--col-primary);
-}
-
-.dashboard aside a {
-  background-color: var(--light);
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  padding: 1.5rem;
-}
-
-.dashboard aside a:hover {
-  background-color: var(--col-secondary);
-}
-
-.dashboard ul li:not(:last-child) a {
-  border-bottom: 1px solid var(--col-primary);
-}
-
-.dashboard main table tr:hover td {
-  background: var(--light);
-}
-
-.dashboard-container {
-  display: grid;
-  grid-template-columns: 14rem auto;
-  gap: 1rem;
-  background-color: var(--col-primary);
-  padding: 2rem;
-  margin-bottom: 5rem;
 }
 
 /* Util */
@@ -1508,11 +1593,6 @@ input[type="file"] {
   }
 }
 
-.hover\:text-secondary:hover {
-  --tw-text-opacity: 1;
-  color: rgb(90 79 207 / var(--tw-text-opacity));
-}
-
 .hover\:text-green-400:hover {
   --tw-text-opacity: 1;
   color: rgb(74 222 128 / var(--tw-text-opacity));
@@ -1593,3 +1673,4 @@ input[type="file"] {
     width: 24rem;
   }
 }
+/*# sourceMappingURL=style.css.map */

@@ -1,6 +1,9 @@
+@import "./css/admin.css";
+@import "./css/header.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 :root {
     --transition: all 300ms ease;
@@ -97,6 +100,16 @@ select {
     color: whitesmoke;
 }
 
+.btn.disabled {
+    background: #434343;
+    color: whitesmoke;
+}
+
+.btn.disabled:hover {
+    background: #434343;
+    color: whitesmoke;
+}
+
 .btn.red {
     background: #9f0000;
     color: black;
@@ -139,75 +152,6 @@ input[type="file"] {
     -webkit-box-shadow: 0px 5px 14px 2px rgba(0, 0, 0, 0.37);
     box-shadow: 0px 5px 14px 2px rgba(0, 0, 0, 0.37);
 }
-
-/* Primary Navigation */
-
-.mobile-nav-toggle {
-    display: none;
-}
-
-.nav_avatar {
-    width: 2.5rem;
-    height: 2.5rem;
-    border: 0.3rem solid;
-}
-
-.nav__profile {
-    position: relative;
-    cursor: pointer;
-}
-
-.nav__profile ul {
-    position: absolute;
-    top: 115%;
-    right: 0;
-    display: block;
-}
-
-.nav__profile ul li {
-    opacity: 0;
-    animation: animateDropdown 800ms 0s ease forwards;
-    transform-origin: top;
-}
-
-.nav__profile ul li:nth-child(2) {
-    animation-delay: 500ms;
-}
-
-
-@keyframes animateDropdown {
-
-    0% {
-        transform: rotateX(90deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
-        opacity: 1;
-    }
-
-}
-
-
-
-.nav__profile ul[data-visible="false"] {
-    display: none;
-}
-
-.primary-navigation {
-    padding: 0;
-    margin: 0;
-    margin-top: 0.45rem;
-    background: hsl(0 0% 100% / .1);
-    backdrop-filter: blur(1rem);
-}
-
-.primary-navigation a>[aria-hidden="true"] {
-
-    font-weight: 700;
-    margin-inline-end: .35rem;
-}
-
 
 /* 
  Posts
@@ -334,12 +278,10 @@ input[type="file"] {
 /* Empty Page */
 
 .empty-page {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5rem;
-    width: 95%;
-    height: 80vh;
-    background: var(--col-secondary);
+    margin: 3rem auto 2rem;
+    width: 65%;
+    min-height: 650px;
+    background: var(--col-primary);
 }
 
 .empty-page h1 {
@@ -349,78 +291,6 @@ input[type="file"] {
     display: grid;
     place-content: center;
 }
-
-
-
-
-/* Admin Dashboard */
-
-.dashboard {
-    margin-top: 6rem;
-}
-
-.dashboard main {
-    margin-left: 1.5rem;
-}
-
-.dashboard main h2 {
-    margin: 0 0 2rem 0;
-    line-height: 1;
-}
-
-.dashboard main table {
-    width: 100%;
-    text-align: left;
-}
-
-.dashboard main table th {
-    background-color: var(--col-secondary);
-    padding: 0.8rem;
-    color: black;
-}
-
-.dashboard main table td {
-    padding: 0.8rem;
-    border-bottom: 1px solid var(--col-primary);
-}
-
-.dashboard aside a {
-    background-color: var(--light);
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    padding: 1.5rem;
-}
-
-.dashboard aside a:hover {
-    background-color: var(--col-secondary);
-}
-
-.dashboard ul li:not(:last-child) a {
-    border-bottom: 1px solid var(--col-primary);
-}
-
-.dashboard main table tr:hover td {
-    background: var(--light);
-}
-
-.dashboard-container {
-    display: grid;
-    grid-template-columns: 14rem auto;
-    gap: 1rem;
-
-    background-color: var(--col-primary);
-
-    padding: 2rem;
-    margin-bottom: 5rem;
-}
-
-
-
-
-
-
-
 
 /* Util */
 
@@ -447,13 +317,6 @@ input[type="file"] {
 .debug-y {
     outline: rgb(255, 225, 0) solid 1px;
 }
-
-
-
-
-
-
-
 
 
 

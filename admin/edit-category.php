@@ -8,8 +8,6 @@ if (!isset($_GET['id'])) {
 
 $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
 
-echo "ID: " . $id;
-
 $query = "SELECT * FROM categories WHERE id=$id";
 $result = mysqli_query($connection, $query);
 $category = mysqli_fetch_assoc($result);

@@ -1,32 +1,45 @@
 <?php
 include_once "./partials/header.php";
+
+if (!isset($_GET['id'])) {
+    header('location: ' . ROOT_URL . 'admin/dashboard.php');
+    die();
+}
+
+$id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
+$categories = $connection->query("SELECT * from categories;");
+
+$postres = $connection->query("SELECT * from posts WHERE id=$id");
+$post = mysqli_fetch_assoc($postres);
+
 ?>
 
 
 <div class="form-container">
     <h2>Edit post</h2>
 
-    <form action="" enctype="multipart/form-data" class="flex flex-col justify-center gap-5 w-2/3">
-
-        <input type="text" placeholder="Title" class="w-96">
-        <select name="" id="" class="w-40">
-            <option value="1">Gaming</option>
-            <option value="1">Tech</option>
-            <option value="1">Blub</option>
+    <form action="<?= ROOT_URL ?>inc/admin-edit-post.inc.php" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<?= $post['id'] ?>">
+        <input type="hidden" name="prev_thumbnail" value="<?= $post['thumbnail'] ?>">
+        <input type="text" name="title" placeholder="Title" value="<?= $post['title'] ?>">
+        <select name="category">
+            <?php while ($category = mysqli_fetch_assoc($categories)) : ?>
+                <option value=" <?= $category['id'] ?>" <?php if ($category['id'] == $post['category_id']) : ?> selected="selected" <?php endif ?>><?= $category['title'] ?></option>
+            <?php endwhile ?>
         </select>
 
-        <textarea name="" id="" rows="10" placeholder="Body"></textarea>
+        <textarea name="body" id="" rows="10" placeholder="Body"><?= $post['body'] ?></textarea>
         <div class="form-control">
             <input type="checkbox" id="is_featured">
             <label for="is_featured">Featured</label>
         </div>
         <div class="form-control">
             <label for="thumbnail" class="btn">Change Thumbnail</label>
-            <input type="file" id="thumbnail">
+            <input type="file" name="thumbnail" id="thumbnail">
         </div>
 
 
-        <button class="btn" type="submit">Update Post</button>
+        <button class="btn" name="submit" type="submit">Update Post</button>
     </form>
 
 </div>

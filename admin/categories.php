@@ -51,11 +51,18 @@ $users = mysqli_query($connection, $query);
                     <tr>
                         <td><?= $user['title'] ?></td>
                         <td><?= $user['description'] ?></td>
-                        <td class="w-10 flex gap-1">
+                        <?php if ($user['id'] != 0) : ?>
+                        <td>
                             <a href="edit-category.php?id=<?= $user['id'] ?>" class="btn green">Edit</a>
                             <a href="../inc/admin-delete-category.inc.php?id=<?= $user['id'] ?>"
                                 class="btn red">Delete</a>
                         </td>
+                        <?php else : ?>
+                        <td>
+                            <a href="" class="btn disabled">Edit</a>
+                            <a href="" class="btn disabled">Delete</a>
+                        </td>
+                        <?php endif ?>
                     </tr>
 
                     <?php endwhile ?>

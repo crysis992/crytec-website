@@ -24,7 +24,15 @@ if (mysqli_num_rows($result) != 1) {
     die();
 }
 
-// Delete user from database
+$updatequery = "UPDATE posts set category_id=0 WHERE category_id=$id";
+$result = mysqli_query($connection, $updatequery);
+
+if (mysqli_errno($connection)) {
+    echo "Failed to update database!";
+    die();
+}
+
+// Delete category from database
 
 $query_delete = "DELETE FROM categories WHERE id=$id";
 $result_delete = mysqli_query($connection, $query_delete);

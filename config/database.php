@@ -2,7 +2,6 @@
 include __DIR__ . '/../config/constants.php';
 
 
-
 // Connect to database
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 

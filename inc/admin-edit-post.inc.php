@@ -84,8 +84,6 @@ $thumbnail_to_insert = $thumbnail_name ?? $previous_thumbnail;
 
 $query = "UPDATE posts SET title='$title', body='$body', thumbnail='$thumbnail_to_insert', category_id=$category_id, is_featured=$is_featured WHERE id=$post_id LIMIT 1";
 
-echo $query;
-
 $result = mysqli_query($connection, $query);
 
 if (!mysqli_errno($connection)) {

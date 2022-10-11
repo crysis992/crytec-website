@@ -60,8 +60,8 @@ $posts = mysqli_query($connection, $query);
                     <?php while ($post = mysqli_fetch_assoc($posts)) : ?>
 
                     <tr>
-                        <td><?= $array[$post['category_id']] ?></td>
                         <td><?= $post['title'] ?></td>
+                        <td><?= $array[$post['category_id']] ?></td>
                         <td class="w-10 flex gap-1">
                             <a href="edit-post.php?id=<?= $post['id'] ?>" class="btn green">Edit</a>
                             <a href="<?= ROOT_URL ?>inc/admin-delete-post.inc.php?id=<?= $post['id'] ?>"

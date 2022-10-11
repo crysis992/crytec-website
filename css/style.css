@@ -92,7 +92,10 @@
 }
 
 .admin-container-content table {
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 50%;
+  table-layout: auto;
   text-align: left;
 }
 
@@ -103,7 +106,8 @@
 }
 
 .admin-container-content table td {
-  width: 100%;
+  width: auto;
+  white-space: nowrap;
   padding: 0.8rem;
   border-bottom: 1px solid var(--col-secondary);
 }

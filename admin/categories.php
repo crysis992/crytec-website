@@ -19,7 +19,7 @@ $users = mysqli_query($connection, $query);
         <nav>
             <ul>
                 <li><a href="add-post.php">Add Post</a></li>
-                <li><a href="#">Manage Posts</a></li>
+                <li><a href="dashboard.php">Manage Posts</a></li>
                 <?php if (isset($_SESSION['user_is_admin'])) : ?>
                 <li><a href="userlist.php">Userlist</a></li>
                 <li><a href="categories.php">Categories</a></li>

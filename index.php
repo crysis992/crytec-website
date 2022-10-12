@@ -41,7 +41,7 @@ $post_result = mysqli_query($connection, $post_query);
     <section class="container mx-auto featured-post">
         <div class="featured-thumbnail"><img src="<?= ROOT_URL ?>static/thumbnails/<?= $featured['thumbnail'] ?>"></div>
         <div class="featured-post-info">
-            <a href="" class="btn">Technology</a>
+            <a href="" class="btn"><?= $category_names[$featured['category_id']] ?></a>
             <h2 class="post-title"><a href="post.html"><?= $featured['title'] ?></a></h2>
             <p class="post-body"><?= $featured['body'] ?></p>
             <div class="post-author">

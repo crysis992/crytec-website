@@ -42,7 +42,7 @@ $post_result = mysqli_query($connection, $post_query);
         <div class="featured-thumbnail"><img src="<?= ROOT_URL ?>static/thumbnails/<?= $featured['thumbnail'] ?>"></div>
         <div class="featured-post-info">
             <a href="" class="btn"><?= $category_names[$featured['category_id']] ?></a>
-            <h2 class="post-title"><a href="post.html"><?= $featured['title'] ?></a></h2>
+            <h2 class="post-title"><a href="post.php?id=<?= $featured['id'] ?>"><?= $featured['title'] ?></a></h2>
             <p class="post-body"><?= $featured['body'] ?></p>
             <div class="post-author">
                 <div class="post-author-avatar">
@@ -76,7 +76,7 @@ $post_result = mysqli_query($connection, $post_query);
             <div class="post-info">
                 <div class="flex gap-6 mb-4">
                     <a href="" class="btn"><?= $category_names[$post['category_id']] ?></a>
-                    <h2><a href="post.html"><?= $post['title'] ?></a></h2>
+                    <h2><a href="post.php?id=<?= $post['id'] ?>"><?= $post['title'] ?></a></h2>
                 </div>
                 <div class="post-body hidden md:block">
                     <p><?= $post['body'] ?></p>

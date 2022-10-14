@@ -326,6 +326,16 @@ Featured Post
     line-height: 1.7rem;
 }
 
+.singlepost-thumbnail img {
+    max-height: 600px;
+}
+
+.singlepost-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* .post-body {
     white-space: nowrap;
     width: 200px;

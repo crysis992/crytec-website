@@ -21,7 +21,7 @@ $author = mysqli_fetch_assoc($author_query);
 
 
 
-    <section class="mx-auto w-full md:w-8/12 py-6">
+    <section class="singlepost-content mx-auto w-full md:w-5/12 py-6">
         <h2 class="font-bold text-5xl"><?= $post['title'] ?></h2>
 
         <div class="post-author">

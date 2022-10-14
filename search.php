@@ -1,13 +1,14 @@
 <?php
 include_once "partials/header.php";
 
-if (!isset($_GET['id'])) {
-    header('location: ' . ROOT_URL);
+if (!isset($_GET['search']) || !isset($_GET['submit'])) {
+    header('location: ' . ROOT_URL . "blog.php");
+    die();
 }
 
-$id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
-$query = "SELECT * FROM posts WHERE category_id = $id ORDER BY date DESC";
-$result = mysqli_query($connection, $query);
+$search = filter_var($_GET['search'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+$query = "SELECT * FROM posts WHERE title LIKE '%$search%' ORDER BY date DESC";
+$posts = mysqli_query($connection, $query);
 
 $users = array();
 $user_avatars = array();
@@ -30,24 +31,20 @@ foreach ($connection->query($category_query) as $index => $row) {
 
 ?>
 
-
-<header class="category-title bg-primary py-14 md:py-16 mt-14 shadow-ct w-11/12 md:w-3/6 mx-auto rounded-xl border
-    border-secondary mb-6">
-    <h2 class="text-5xl font-extrabold font-barlow text-center mx-auto"><?= $category_names[$id] ?></h2>
-</header>
-
-
 <!-- List all Posts -->
 
-<div class="container posts mx-auto mb-6">
+<div class="container posts mx-auto my-6">
 
 
-    <?php while ($post = $result->fetch_assoc()) : ?>
+    <?php while ($post = $posts->fetch_assoc()) : ?>
+
     <article class="post-article w-[300px] md:w-[355px] mb-10 md:mb-0">
         <div class="post-thumbnail"> <img src="<?= ROOT_URL ?>static/thumbnails/<?= $post['thumbnail'] ?>"> </div>
 
         <div class="post-info">
             <div class="flex gap-6 mb-4">
+                <a href="<?= ROOT_URL ?>category-posts.php?id=<?= $post['category_id'] ?>"
+                    class="btn"><?= $category_names[$post['category_id']] ?></a>
                 <h2><a href="post.php?id=<?= $post['id'] ?>"><?= $post['title'] ?></a></h2>
             </div>
             <div class="post-body hidden md:block">
@@ -76,7 +73,6 @@ foreach ($connection->query($category_query) as $index => $row) {
 </div>
 
 <!-- END POSTS -->
-
 
 <?php
 include_once "partials/footer.php";

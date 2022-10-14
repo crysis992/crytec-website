@@ -18,19 +18,30 @@ $post = mysqli_fetch_assoc($postres);
 <div class="form-container">
     <h2>Edit post</h2>
 
+    <?php if (isset($_SESSION['add-post'])) : ?>
+    <div class="alert-message error">
+        <p>
+            <?= $_SESSION['add-post'];
+                unset($_SESSION['add-post']);
+                ?>
+        </p>
+    </div>
+    <?php endif ?>
+
     <form action="<?= ROOT_URL ?>inc/admin-edit-post.inc.php" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?= $post['id'] ?>">
         <input type="hidden" name="prev_thumbnail" value="<?= $post['thumbnail'] ?>">
         <input type="text" name="title" placeholder="Title" value="<?= $post['title'] ?>">
-        <select name="category">
+        <select name="category_id">
             <?php while ($category = mysqli_fetch_assoc($categories)) : ?>
-                <option value=" <?= $category['id'] ?>" <?php if ($category['id'] == $post['category_id']) : ?> selected="selected" <?php endif ?>><?= $category['title'] ?></option>
+            <option value=" <?= $category['id'] ?>" <?php if ($category['id'] == $post['category_id']) : ?>
+                selected="selected" <?php endif ?>><?= $category['title'] ?></option>
             <?php endwhile ?>
         </select>
 
         <textarea name="body" id="" rows="10" placeholder="Body"><?= $post['body'] ?></textarea>
         <div class="form-control">
-            <input type="checkbox" id="is_featured">
+            <input type="checkbox" id="is_featured" name="is_featured" value="1">
             <label for="is_featured">Featured</label>
         </div>
         <div class="form-control">

@@ -11,6 +11,8 @@ $title = filter_var($_POST['title'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $body = filter_var($_POST['body'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $category_id = filter_var($_POST['category'], FILTER_SANITIZE_NUMBER_INT);
 $is_featured = 0;
+
+
 if (isset($_POST['is_featured'])) {
     $is_featured = filter_var($_POST['is_featured'], FILTER_SANITIZE_NUMBER_INT);
 }
@@ -51,6 +53,12 @@ if ($thumbnail['size'] > 2000000) {
     $_SESSION['add-post'] = "File size to big. Should be less than 1mb";
 }
 
+$thumbnailInfo = getimagesize($thumbnail_tmp_name);
+
+if ($thumbnailInfo[0] < 350 || $thumbnailInfo[1] < 350) {
+    $_SESSION['add-post'] = "Thumbnail must be at least 350px x 350px";
+}
+
 if (isset($_SESSION['add-post'])) {
     // ERROR - Redirect back
     $_SESSION['add-post-data'] = $_POST;
@@ -59,7 +67,7 @@ if (isset($_SESSION['add-post'])) {
 }
 
 
-//Upload Avatar
+//Upload Thumbnail
 move_uploaded_file($thumbnail_tmp_name, $thumbnail_destination_path);
 
 

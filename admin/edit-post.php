@@ -39,7 +39,7 @@ $post = mysqli_fetch_assoc($postres);
             <?php endwhile ?>
         </select>
 
-        <textarea name="body" id="" rows="10" placeholder="Body"><?= $post['body'] ?></textarea>
+        <textarea name="body" id="editor" rows="10" placeholder="Body"><?= $post['body'] ?></textarea>
         <div class="form-control">
             <input type="checkbox" id="is_featured" name="is_featured" value="1">
             <label for="is_featured">Featured</label>
@@ -54,6 +54,15 @@ $post = mysqli_fetch_assoc($postres);
     </form>
 
 </div>
+
+<script src="../js/editor/ckeditor.js"></script>
+<script>
+ClassicEditor
+    .create(document.querySelector('#editor'))
+    .catch(error => {
+        console.error(error);
+    });
+</script>
 
 <?php
 include_once "./partials/footer.php";

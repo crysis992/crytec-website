@@ -37,7 +37,7 @@ $author = mysqli_fetch_assoc($author_query);
         <div class="singlepost-thumbnail mb-10 mt-5 mx-auto">
             <img src="<?= ROOT_URL ?>static/thumbnails/<?= $post['thumbnail'] ?>">
         </div>
-        <?= $post['body'] ?>
+        <?= htmlspecialchars_decode($post['body']); ?>
 
     </section>
 

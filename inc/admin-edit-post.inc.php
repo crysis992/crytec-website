@@ -11,6 +11,8 @@ $previous_thumbnail = filter_var($_POST['prev_thumbnail'], FILTER_SANITIZE_FULL_
 $author_id = $_SESSION['user-id'];
 $title = filter_var($_POST['title'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $body = filter_var($_POST['body'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+$body = mysqli_real_escape_string($connection, $body);
+
 $category_id = filter_var($_POST['category_id'], FILTER_SANITIZE_NUMBER_INT);
 $is_featured = 0;
 if (isset($_POST['is_featured'])) {

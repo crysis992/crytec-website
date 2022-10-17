@@ -20,27 +20,31 @@ header {
   position: relative;
   cursor: pointer;
 }
+
 .nav__profile ul {
   position: absolute;
   top: 115%;
   right: 0;
   display: block;
 }
+
 .nav__profile ul li {
   opacity: 0;
   -webkit-animation: animateDropdown 200ms 0s ease forwards;
-          animation: animateDropdown 200ms 0s ease forwards;
+  animation: animateDropdown 200ms 0s ease forwards;
   transform-origin: top;
 }
+
 .nav__profile ul li:nth-child(2) {
   -webkit-animation-delay: 400ms;
-          animation-delay: 400ms;
+  animation-delay: 400ms;
 }
 
 @-webkit-keyframes animateDropdown {
   0% {
     transform: rotateX(90deg);
   }
+
   100% {
     transform: rotate(0deg);
     opacity: 1;
@@ -51,11 +55,13 @@ header {
   0% {
     transform: rotateX(90deg);
   }
+
   100% {
     transform: rotate(0deg);
     opacity: 1;
   }
 }
+
 .nav__profile ul[data-visible=false] {
   display: none;
 }
@@ -65,14 +71,18 @@ header {
   margin: 0;
   background: hsla(0deg, 0%, 100%, 0.1);
   -webkit-backdrop-filter: blur(1rem);
-          backdrop-filter: blur(1rem);
+  backdrop-filter: blur(1rem);
   gap: 1rem;
 }
+
 .primary-navigation a:hover {
   color: var(--col-secondary);
 }
-.primary-navigation a > [aria-hidden=true] {
+
+.primary-navigation a>[aria-hidden=true] {
   font-weight: 700;
   -webkit-margin-end: 0.35rem;
-          margin-inline-end: 0.35rem;
-}/*# sourceMappingURL=header.css.map */
+  margin-inline-end: 0.35rem;
+}
+
+/*# sourceMappingURL=header.css.map */

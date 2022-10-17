@@ -12,6 +12,7 @@ $body = filter_var($_POST['body'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $category_id = filter_var($_POST['category'], FILTER_SANITIZE_NUMBER_INT);
 $is_featured = 0;
 
+$body = mysqli_real_escape_string($connection, $body);
 
 if (isset($_POST['is_featured'])) {
     $is_featured = filter_var($_POST['is_featured'], FILTER_SANITIZE_NUMBER_INT);

@@ -64,7 +64,7 @@ $post_result = mysqli_query($connection, $post_query);
         <a href="<?= ROOT_URL ?>category-posts.php?id=<?= $featured['category_id'] ?>"
             class="btn"><?= $category_names[$featured['category_id']] ?></a>
         <h2 class="post-title"><a href="post.php?id=<?= $featured['id'] ?>"><?= $featured['title'] ?></a></h2>
-        <p class="post-body"><?= $featured['body'] ?></p>
+        <p class="post-body"><?= strip_tags(htmlspecialchars_decode($featured['body']))  ?></p>
         <div class="post-author">
             <div class="post-author-avatar">
                 <img src="<?= ROOT_URL ?>static/images/<?= $user_avatars[$featured['author_id']] ?>">
@@ -103,7 +103,7 @@ $post_result = mysqli_query($connection, $post_query);
                 <h2><a href="post.php?id=<?= $post['id'] ?>"><?= $post['title'] ?></a></h2>
             </div>
             <div class="post-body hidden md:block">
-                <p><?= $post['body'] ?></p>
+                <p><?= strip_tags(htmlspecialchars_decode($post['body']))  ?></p>
             </div>
 
         </div>

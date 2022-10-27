@@ -58,7 +58,11 @@ $post = mysqli_fetch_assoc($postres);
 <script src="../js/editor/ckeditor.js"></script>
 <script>
 ClassicEditor
-    .create(document.querySelector('#editor'))
+    .create(document.querySelector('#editor'), {
+        mediaEmbed: {
+            previewsInData: true
+        },
+    })
     .catch(error => {
         console.error(error);
     });

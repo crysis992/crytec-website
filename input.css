@@ -1,9 +1,12 @@
 @import "./css/admin.css";
 @import "./css/header.css";
 @import "./css/editor.css";
+@import "./css/fontsheet.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 
 :root {
@@ -51,11 +54,66 @@ html {
     box-sizing: border-box;
 }
 
+/* @layer base {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: initial;
+        font-weight: initial;
+    }
+
+    code,
+    kbd,
+    samp,
+    pre {
+        font-family: initial;
+        font-size: initial;
+    }
+} */
+
 *,
 *:before,
 *:after {
     box-sizing: inherit;
 }
+
+
+.singlepost h1,
+h2 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.singlepost h3 {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.singlepost h4 {
+    font-size: 30px;
+}
+
+.singlepost h5 {
+    font-size: 28px;
+}
+
+.singlepost h6 {
+    font-size: 26px;
+}
+
+
+.singplepost-content>ul {
+    list-style: initial;
+    background-color: red;
+}
+
+.singlepost code {}
+
+
 
 body {
     /* background: url("../img/background.jpg") no-repeat center center fixed; */

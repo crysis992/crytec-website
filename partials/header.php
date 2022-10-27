@@ -30,13 +30,6 @@ if (isset($_SESSION['user-id'])) {
     <title>CryTec Blog</title>
     <link rel="icon" type="image/png" href="<?= ROOT_URL ?>favicon.png">
 
-    <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&display=swap"
-        rel="stylesheet">
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -62,7 +55,7 @@ if (isset($_SESSION['user-id'])) {
         <nav>
             <!-- Nav Links -->
             <ul id="primary-navigation" data-visible="false"
-                class="primary-navigation flex md:items-center text-slate-300">
+                class="primary-navigation flex md:items-center text-slate-300 font-barlow">
 
                 <li><a href="<?= ROOT_URL ?>index.php"><span aria-hidden="true">01</span>Home</a></li>
                 <li> <a href="<?= ROOT_URL ?>blog.php"><span aria-hidden="true">02</span> Blog</a></li>

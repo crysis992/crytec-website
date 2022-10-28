@@ -7,21 +7,23 @@ const dropdown = document.querySelector(".dropdown")
 
 let counter;
 
-dropdown.addEventListener('mouseleave', (event) => {
-    counter = setTimeout(() => {
-        hideDropDown();
-    }, 850);
+if (dropdown !== undefined && dropdown !== null) {
+    dropdown.addEventListener('mouseleave', (event) => {
+        counter = setTimeout(() => {
+            hideDropDown();
+        }, 850);
 
-    console.log("Counter = " + counter)
-})
+        console.log("Counter = " + counter)
+    })
 
-dropdown.addEventListener('mouseenter', (event) => {
+    dropdown.addEventListener('mouseenter', (event) => {
 
-    if (counter != null) {
-        clearTimeout(counter);
-    }
+        if (counter != null) {
+            clearTimeout(counter);
+        }
 
-})
+    })
+}
 
 
 avatar.addEventListener('click', () => {

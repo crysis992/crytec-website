@@ -1,11 +1,11 @@
 @font-face {
-    font-family: 'Barlow';
-    src: url("./font/Barlow-Regular.ttf");
+    font-family: "Barlow";
+    src: url("/css/font/Barlow-Regular.ttf") format("truetype");
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'Bellefair';
-    src: url("./font/Bellefair-Regular.ttf");
+    src: url("font/Bellefair-Regular.ttf") format("truetype");
     font-weight: 400;
 }

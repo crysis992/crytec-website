@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "Barlow";
+
+  src: url("/css/font/Barlow-Regular.ttf") format("truetype");
+
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Bellefair';
+
+  src: url("font/Bellefair-Regular.ttf") format("truetype");
+
+  font-weight: 400;
+}
+
 .form-container {
   background-color: var(--col-primary);
   height: -webkit-fit-content;
@@ -142,7 +158,7 @@
 /* Primary Navigation */
 
 header {
-  font-family: Barlow Condensed, sans-serif;
+  font-family: "Barlow", sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -221,7 +237,7 @@ header {
   color: var(--col-secondary);
 }
 
-.primary-navigation a>[aria-hidden=true] {
+.primary-navigation a > [aria-hidden=true] {
   font-weight: 700;
   -webkit-margin-end: 0.35rem;
   margin-inline-end: 0.35rem;
@@ -813,22 +829,6 @@ header {
   .ck-content .page-break::after {
     display: none;
   }
-}
-
-@font-face {
-  font-family: 'Barlow';
-
-  src: url("./font/Barlow-Regular.ttf");
-
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Bellefair';
-
-  src: url("./font/Bellefair-Regular.ttf");
-
-  font-weight: 400;
 }
 
 /* ! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com */
@@ -1777,8 +1777,6 @@ video {
 
 :root {
   --transition: all 300ms ease;
-  --font-barlow: font-family: 'Barlow', sans-serif;
-  --font-bellefair: font-family: 'Bellefair', serif;
   --col-primary: rgb(24, 24, 26);
   --col-secondary: rgb(90, 79, 207);
   --col-highlight: rgb(41, 41, 45);
@@ -1866,15 +1864,12 @@ h2 {
   background-color: red;
 }
 
-.singlepost code {
-}
-
 body {
   /* background: url("../img/background.jpg") no-repeat center center fixed; */
   background: linear-gradient(#141e30, #243b55) no-repeat fixed center;
   background-size: cover;
   color: var(--col-text);
-  font-family: Bellefair, sans-serif;
+  font-family: "Bellefair", sans-serif;
   position: relative;
 }
 

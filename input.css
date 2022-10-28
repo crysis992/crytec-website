@@ -1,21 +1,13 @@
+@import "./css/fontsheet.css";
 @import "./css/admin.css";
 @import "./css/header.css";
 @import "./css/editor.css";
-@import "./css/fontsheet.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
-
 :root {
     --transition: all 300ms ease;
-
-    --font-barlow: font-family: 'Barlow', sans-serif;
-    --font-bellefair: font-family: 'Bellefair', serif;
-
-
     --col-primary: rgb(24, 24, 26);
     --col-secondary: rgb(90, 79, 207);
     --col-highlight: rgb(41, 41, 45);
@@ -111,9 +103,6 @@ h2 {
     background-color: red;
 }
 
-.singlepost code {}
-
-
 
 body {
     /* background: url("../img/background.jpg") no-repeat center center fixed; */
@@ -123,7 +112,7 @@ body {
     background-size: cover;
     color: var(--col-text);
 
-    font-family: Bellefair, sans-serif;
+    font-family: "Bellefair", sans-serif;
     position: relative;
 }
 
